@@ -9,7 +9,7 @@ namespace Synopsis.Infrastructure.Data.Configurations
 
         public override void Configure(EntityTypeConfiguration<ReminderTag> builder)
         {
-            base.Configure(builder);
+            base.Configure(builder); 
         }
     }
 }

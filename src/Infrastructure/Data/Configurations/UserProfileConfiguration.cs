@@ -10,6 +10,10 @@ namespace Synopsis.Infrastructure.Data.Configurations
         public override void Configure(EntityTypeConfiguration<UserProfile> builder)
         {
             base.Configure(builder);
+
+            builder.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(200);
         }
     }
 }
