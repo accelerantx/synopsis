@@ -8,9 +8,8 @@ using Synopsis.Domain.Common;
 
 namespace Synopsis.Infrastructure.Data.Configurations
 {
-    internal abstract class ConfigurationBase<TEntity> 
-    // TODO: inherit from this when upgrade to EF Core
-    // : IEntityTypeConfiguration<TEntity>
+    // TODO: remove EntityTypeConfiguration when upgrading to EF Core
+    internal abstract class ConfigurationBase<TEntity> : EntityTypeConfiguration<TEntity>, IEntityTypeConfiguration<TEntity>
         where TEntity : class, IEntity
     {
         public abstract string TableName { get; }
@@ -25,5 +24,12 @@ namespace Synopsis.Infrastructure.Data.Configurations
             builder.Property(e => e.IsDeleted)
                 .IsOptional();
         }
+    }
+
+    // TODO: this goes away when upgrading to EF Core 
+    internal interface IEntityTypeConfiguration<TEntity>
+        where TEntity : class, IEntity
+    {
+        void Configure(EntityTypeConfiguration<TEntity> builder);
     }
 }
