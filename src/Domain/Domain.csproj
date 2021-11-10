@@ -7,8 +7,8 @@
     <ProjectGuid>{E2CB08FA-15E1-460F-AEC2-F607B8FC65C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>Synopsis.Domain</RootNamespace>
+    <AssemblyName>Synopsis.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
