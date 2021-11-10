@@ -16,7 +16,7 @@ namespace Synopsis.Domain.Entities
         public long ListId { get; set; }
         public long UserId { get; set; }
 
-        public virtual List<ReminderTag> Tags { get; set; }
+        public virtual ICollection<ReminderTag> Tags { get; set; }
         public virtual List List { get; set; }
         public virtual UserProfile User { get; set; }
     }

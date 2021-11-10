@@ -2,7 +2,7 @@
 
 namespace Synopsis.Domain.Common
 {
-    public abstract class EntityBase
+    public abstract class EntityBase : IEntity
     {
         public long Id { get; set; }
         public DateTime? CreateDate { get; set; }
