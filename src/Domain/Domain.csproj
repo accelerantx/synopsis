@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\EntityBase.cs" />
+    <Compile Include="Entities\List.cs" />
+    <Compile Include="Entities\Reminder.cs" />
+    <Compile Include="Entities\ReminderTag.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\UserProfile.cs" />
+    <Compile Include="Enums\PriorityLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
