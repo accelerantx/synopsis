@@ -17,7 +17,8 @@ namespace Synopsis.Infrastructure.Data.Configurations
 
             builder.HasRequired(e => e.User)
                 .WithMany(u => u.Tags)
-                .HasForeignKey(e => e.UserId);
+                .HasForeignKey(e => e.UserId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

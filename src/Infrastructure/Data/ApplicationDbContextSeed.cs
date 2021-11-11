@@ -62,7 +62,7 @@ namespace Synopsis.Infrastructure.Data
 
         private void GenerateUserTags(long userId)
         {
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < 5; i++)
             {
                 var tagId = _tags.Count + 1;
                 _tags.Add(new Tag
@@ -109,7 +109,7 @@ namespace Synopsis.Infrastructure.Data
 
         private void GenerateUserLists(int userId)
         {
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 3; i++)
             {
                 var listId = _lists.Count + 1;
                 _lists.Add(new List

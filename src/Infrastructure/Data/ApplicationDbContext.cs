@@ -1,12 +1,26 @@
 ﻿using System.Data.Entity;
 using Synopsis.Domain.Entities;
+using Synopsis.Infrastructure.Data.Migrations;
 
 namespace Synopsis.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
         public const string SchemaName = "Synopsis";
+        public const string ConnectionStringName = "SynopsisDb";
 
+        public ApplicationDbContext()
+            : base(ConnectionStringName)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+        }
+
+        public ApplicationDbContext(string nameOrConnectionString)
+            : base(nameOrConnectionString)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>(nameOrConnectionString));
+        }
+        
         // TODO: when upgrading to EF Core change to ModelBuilder
         protected override void OnModelCreating(DbModelBuilder builder)
         {

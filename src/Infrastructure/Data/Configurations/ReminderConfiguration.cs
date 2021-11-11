@@ -34,15 +34,18 @@ namespace Synopsis.Infrastructure.Data.Configurations
 
             builder.HasMany(e => e.Tags)
                 .WithRequired(t => t.Reminder)
-                .HasForeignKey(e => e.ReminderId);
+                .HasForeignKey(e => e.ReminderId)
+                .WillCascadeOnDelete(false);
 
             builder.HasRequired(e => e.User)
                 .WithMany(u => u.Reminders)
-                .HasForeignKey(e => e.UserId);
+                .HasForeignKey(e => e.UserId)
+                .WillCascadeOnDelete(false);
 
             builder.HasRequired(e => e.List)
                 .WithMany(l => l.Reminders)
-                .HasForeignKey(e => e.ListId);
+                .HasForeignKey(e => e.ListId)
+                .WillCascadeOnDelete(false);
         }
     }
 }

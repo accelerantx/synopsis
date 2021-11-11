@@ -18,7 +18,7 @@
                         IsDeleted = c.Boolean(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -38,8 +38,8 @@
                         IsDeleted = c.Boolean(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("Synopsis.Lists", t => t.ListId, cascadeDelete: true)
-                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("Synopsis.Lists", t => t.ListId, cascadeDelete: false)
+                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.ListId)
                 .Index(t => t.UserId);
             
@@ -70,7 +70,7 @@
                         IsDeleted = c.Boolean(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("Synopsis.UserProfiles", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
             CreateTable(
